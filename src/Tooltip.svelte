@@ -38,7 +38,7 @@
   };
 
   onMount(() => {
-    targetEl = document.querySelector(`#${target}`);
+    targetEl = typeof(target) == 'object' ? target : document.querySelector(`#${target}`);
     targetEl.addEventListener('mouseover', () => isOpen = true);
     targetEl.addEventListener('mouseleave', () => isOpen = false);
   });
